@@ -16,7 +16,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -24,6 +27,7 @@ import model.CustomerDTO;
 import model.ItemDTO;
 import model.OrderDTO;
 import model.OrderDetailDTO;
+import util.validation.ValidationUtil;
 import view.tm.OrderDetailTM;
 import javafx.scene.control.*;
 
@@ -34,8 +38,10 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class PlaceOrderFormController {
@@ -169,6 +175,8 @@ public class PlaceOrderFormController {
         });
         loadAllCustomerIds();
         loadAllItemCodes();
+        btnSave.setDisable(true);
+        storeValidations();
     }
 
     public void btnPlaceOrder_OnAction(ActionEvent actionEvent) {
@@ -319,5 +327,27 @@ public class PlaceOrderFormController {
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         Platform.runLater(() -> primaryStage.sizeToScene());
+    }
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+    Pattern qtyPattern = Pattern.compile("^[0-9]{1,5}$");
+    Pattern discountPattern = Pattern.compile("^[0-9]{1,5}[.][0-9]{1,3}|[0-9]{1,5}$");
+
+    private void storeValidations() {
+        map.put(txtQty, qtyPattern);
+        map.put(txtDiscount, discountPattern);
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map,btnSave);
+
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                //new Alert(Alert.AlertType.INFORMATION, "Aded").showAndWait();
+            }
+        }
     }
 }

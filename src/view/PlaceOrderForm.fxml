@@ -59,12 +59,12 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="238.0" layoutY="315.0" prefHeight="28.0" prefWidth="161.0" promptText="Qty">
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="238.0" layoutY="315.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="161.0" promptText="Qty">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="429.0" layoutY="315.0" prefHeight="28.0" prefWidth="161.0" promptText="Discount">
+      <JFXTextField fx:id="txtDiscount" labelFloat="true" layoutX="429.0" layoutY="315.0" onKeyReleased="#textFields_Key_Released" prefHeight="28.0" prefWidth="161.0" promptText="Discount">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -84,7 +84,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXButton id="btnSave" fx:id="btnSave" layoutX="625.0" layoutY="319.0" onAction="#btnAdd_OnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-cursor: hand;" text="Add">
+      <JFXButton id="btnSave" fx:id="btnSave" layoutX="625.0" layoutY="319.0" onAction="#btnAdd_OnAction" prefHeight="31.0" prefWidth="101.0" style="-fx-cursor: hand;" stylesheets="@../styles/manage_customer.css" text="Add">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

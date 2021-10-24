@@ -12,17 +12,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.ItemDTO;
+import util.validation.ValidationUtil;
 import view.tm.ItemTM;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.regex.Pattern;
 
 public class ManageItemFormController {
     public JFXButton btnAddNewCustomer;
@@ -68,6 +74,8 @@ public class ManageItemFormController {
         colQtyOnHand.setCellValueFactory(new PropertyValueFactory<>("qtyOnHand"));
 
         loadAllItems();
+        btnSave.setDisable(true);
+        storeValidations();
     }
 
     private void loadAllItems() {
@@ -195,5 +203,30 @@ public class ManageItemFormController {
         txtPackSize.clear();
         txtUnitPrice.clear();
         txtQtyOnHand.clear();
+    }
+
+    LinkedHashMap<TextField, Pattern> map = new LinkedHashMap();
+    Pattern discriptionPattern = Pattern.compile("^[A-z ]{1,}$");
+    Pattern packSizePattern = Pattern.compile("^[A-z ]{3,20}$");
+    Pattern unitPricePattern = Pattern.compile("^[0-9]{1,5}[.][0-9]{1,3}$");
+    Pattern qtyOnHandPattern = Pattern.compile("^[0-9]{1,5}$");
+
+    private void storeValidations() {
+        map.put(txtDescription, discriptionPattern);
+        map.put(txtPackSize, packSizePattern);
+        map.put(txtUnitPrice, unitPricePattern);
+        map.put(txtQtyOnHand, qtyOnHandPattern);
+    }
+
+    public void textFields_Key_Released(KeyEvent keyEvent) {
+        Object response = ValidationUtil.validate(map,btnSave);
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (response instanceof TextField) {
+                TextField errorText = (TextField) response;
+                errorText.requestFocus();
+            } else if (response instanceof Boolean) {
+                //new Alert(Alert.AlertType.INFORMATION, "Aded").showAndWait();
+            }
+        }
     }
 }

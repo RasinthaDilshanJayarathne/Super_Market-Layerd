@@ -41,22 +41,22 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="27.0" layoutY="197.0" prefHeight="31.0" prefWidth="337.0" promptText="Discription :">
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="27.0" layoutY="197.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Discription :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPackSize" labelFloat="true" layoutX="397.0" layoutY="197.0" prefHeight="31.0" prefWidth="337.0" promptText="Pack Size :">
+      <JFXTextField fx:id="txtPackSize" labelFloat="true" layoutX="397.0" layoutY="197.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Pack Size :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="27.0" layoutY="260.0" prefHeight="29.0" prefWidth="337.0" promptText="Unit Price :">
+      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="27.0" layoutY="260.0" onKeyReleased="#textFields_Key_Released" prefHeight="29.0" prefWidth="337.0" promptText="Unit Price :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="397.0" layoutY="259.0" prefHeight="31.0" prefWidth="337.0" promptText="Qty On Hand :">
+      <JFXTextField fx:id="txtQtyOnHand" labelFloat="true" layoutX="397.0" layoutY="259.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Qty On Hand :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

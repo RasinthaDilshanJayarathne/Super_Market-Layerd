@@ -31,32 +31,32 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerTitle" labelFloat="true" layoutX="27.0" layoutY="174.0" prefHeight="31.0" prefWidth="337.0" promptText="Customer Title :">
+      <JFXTextField fx:id="txtCustomerTitle" labelFloat="true" layoutX="27.0" layoutY="174.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Customer Title :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="397.0" layoutY="174.0" prefHeight="31.0" prefWidth="337.0" promptText="Customer Name :">
+      <JFXTextField fx:id="txtCustomerName" labelFloat="true" layoutX="397.0" layoutY="174.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Customer Name :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerAddress" labelFloat="true" layoutX="27.0" layoutY="237.0" prefHeight="29.0" prefWidth="337.0" promptText="Customer Address :">
+      <JFXTextField fx:id="txtCustomerAddress" labelFloat="true" layoutX="27.0" layoutY="237.0" onKeyReleased="#textFields_Key_Released" prefHeight="29.0" prefWidth="337.0" promptText="Customer Address :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerProvince" labelFloat="true" layoutX="397.0" layoutY="236.0" prefHeight="31.0" prefWidth="337.0" promptText="Province :">
+      <JFXTextField fx:id="txtCustomerProvince" labelFloat="true" layoutX="397.0" layoutY="236.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Province :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerCity" labelFloat="true" layoutX="27.0" layoutY="298.0" prefHeight="31.0" prefWidth="337.0" promptText="City :">
+      <JFXTextField fx:id="txtCustomerCity" labelFloat="true" layoutX="27.0" layoutY="298.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="City :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtCustomerPostalCode" labelFloat="true" layoutX="397.0" layoutY="298.0" prefHeight="31.0" prefWidth="337.0" promptText="Postal Code :">
+      <JFXTextField fx:id="txtCustomerPostalCode" labelFloat="true" layoutX="397.0" layoutY="298.0" onKeyReleased="#textFields_Key_Released" prefHeight="31.0" prefWidth="337.0" promptText="Postal Code :">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

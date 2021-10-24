@@ -52,22 +52,33 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="120" splitType="Stretch">
+		<band height="231" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="30" width="555" height="30" forecolor="#1E55FA" uuid="36acb8ba-796a-451f-9df0-0dd7d472f8da"/>
+				<reportElement x="0" y="155" width="555" height="30" forecolor="#1E55FA" uuid="799f3d2a-293b-40b3-976a-6c951ef647fb"/>
 				<textElement textAlignment="Center">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ALL CUSTOMER DETAIL REPORT]]></text>
+				<text><![CDATA[CUSTOMER DETAIL REPORT]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
-				<reportElement x="210" y="61" width="100" height="30" uuid="da19b82d-b5f5-47a0-a856-bd61d3c7d117"/>
+				<reportElement x="210" y="186" width="100" height="30" uuid="66c72fb5-ea1b-48b2-8643-0b6e11300605"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField pattern="HH:mm">
-				<reportElement x="316" y="61" width="100" height="30" uuid="8820f31a-cdca-458d-b3cb-532b6e8b19a4"/>
+				<reportElement x="316" y="186" width="100" height="30" uuid="1ca09226-083a-4136-8efc-5fd618846cec"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="101" y="-99" width="353" height="281" uuid="12dbbf05-60d8-4fd9-be40-e26dc3a54ac0"/>
+				<imageExpression><![CDATA["D:/Photos/Blood Bnking/123107698-shopping-logo-design-concept-template-vector-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="106" width="555" height="30" forecolor="#050505" uuid="d6c4f2e6-8c73-4c5a-bf4b-eb10863a7eea"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPER MARKET]]></text>
+			</staticText>
 		</band>
 	</title>
 	<columnHeader>
