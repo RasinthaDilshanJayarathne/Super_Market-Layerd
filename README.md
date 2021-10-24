@@ -10,3 +10,6 @@ Admin Dashboard 🎫
 ![Screenshot (411)](https://user-images.githubusercontent.com/87766409/138576562-09451ff7-135b-4c00-b63e-a008c8ff98fc.png)
 
 Chaier Dashboard 🖥
+
+![Screenshot (415)](https://user-images.githubusercontent.com/87766409/138576572-182cfdb4-d5dd-43e4-94a3-c6e87d70f226.png)
+
