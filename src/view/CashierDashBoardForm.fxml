@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="593.0" prefWidth="1012.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CashierDashBoardFormController">
+   <children>
+      <ImageView fx:id="imgOrder" fitHeight="159.0" fitWidth="127.0" layoutX="439.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/orders.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCustomer" fitHeight="159.0" fitWidth="127.0" layoutX="169.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/customers.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgPayment" fitHeight="159.0" fitWidth="127.0" layoutX="699.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/payment.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblMenu" alignment="CENTER" layoutX="9.0" layoutY="445.0" prefHeight="32.0" prefWidth="1012.0" text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" alignment="CENTER" layoutX="9.0" layoutY="496.0" prefHeight="17.0" prefWidth="1012.0" text="Please select one of above main operations to proceed" />
+      <Label alignment="CENTER" layoutX="10.0" layoutY="566.0" prefHeight="16.0" prefWidth="1012.0" text="Copyright ©️ 2021 Supermarcket. All Right Reserved Design By Rasintha Dilshan" />
+      <Label alignment="CENTER" layoutX="1.0" layoutY="30.0" prefHeight="52.0" prefWidth="1022.0" text="Cashier Dashboard" textFill="#0a39f7">
+         <font>
+            <Font name="Arial Bold" size="45.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutY="88.0" prefHeight="21.0" prefWidth="1022.0" text=" Point Of Sale System">
+         <font>
+            <Font name="Bodoni MT Black" size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="58.0" layoutY="164.0" prefHeight="2.0" prefWidth="909.0" />
+      <FontAwesomeIconView fill="#ee1d1d" glyphName="POWER_OFF" layoutX="14.0" layoutY="44.0" onMouseClicked="#navigateToHome" size="40" />
+   </children>
+</AnchorPane>

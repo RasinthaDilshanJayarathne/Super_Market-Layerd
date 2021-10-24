@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="763.0" prefWidth="757.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageReportFormController">
+   <children>
+      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="27.0" layoutY="17.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/home-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgDailyIncome" fitHeight="102.0" fitWidth="118.0" layoutX="116.0" layoutY="194.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/report.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMonthlyIncome" fitHeight="102.0" fitWidth="118.0" layoutX="341.0" layoutY="194.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/report.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgMovableItem" fitHeight="102.0" fitWidth="118.0" layoutX="558.0" layoutY="194.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/movableItem.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblMenu" alignment="CENTER" layoutY="453.0" prefHeight="51.0" prefWidth="826.0" text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" alignment="CENTER" layoutY="504.0" prefHeight="21.0" prefWidth="827.0" text="Please select one of above main operations to proceed" />
+   </children>
+</AnchorPane>
