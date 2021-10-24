@@ -13,3 +13,6 @@ Chaier Dashboard 🖥
 
 ![Screenshot (415)](https://user-images.githubusercontent.com/87766409/138576572-182cfdb4-d5dd-43e4-94a3-c6e87d70f226.png)
 
+Manage Items 📦
+
+![Screenshot (412)](https://user-images.githubusercontent.com/87766409/138576590-d73f49fe-8347-4cf2-a1f5-683b07ff3730.png)
