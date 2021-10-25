@@ -21,7 +21,6 @@ import java.net.URL;
 public class CashierDashBoardFormController {
     public ImageView imgOrder;
     public ImageView imgCustomer;
-    public ImageView imgPayment;
     public Label lblMenu;
     public Label lblDescription;
     public AnchorPane root;
@@ -38,10 +37,6 @@ public class CashierDashBoardFormController {
                 case "imgCustomer":
                     lblMenu.setText("Manage Customers");
                     lblDescription.setText("Click to add, edit, delete, search or view customers");
-                    break;
-                case "imgPayment":
-                    lblMenu.setText("Make Payment");
-                    lblDescription.setText("Click to add, edit, delete, search or view payment");
                     break;
             }
 
@@ -85,9 +80,6 @@ public class CashierDashBoardFormController {
                     break;
                 case "imgCustomer":
                     root = FXMLLoader.load(this.getClass().getResource("/view/ManageCustomerForm.fxml"));
-                    break;
-                case "imgPayment":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/MakePaymentForm.fxml"));
                     break;
             }
 

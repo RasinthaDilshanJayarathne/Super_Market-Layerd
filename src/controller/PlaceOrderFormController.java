@@ -5,6 +5,7 @@ import bo.impl.BOFactory;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import db.DbConnection;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
@@ -27,6 +28,10 @@ import model.CustomerDTO;
 import model.ItemDTO;
 import model.OrderDTO;
 import model.OrderDetailDTO;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import util.validation.ValidationUtil;
 import view.tm.OrderDetailTM;
 import javafx.scene.control.*;
@@ -55,7 +60,6 @@ public class PlaceOrderFormController {
     public JFXTextField txtDiscount;
     public Label lblId;
     public Label lblDate;
-    public Label lblTime;
     public JFXButton btnSave;
     public TableView<OrderDetailTM> tblOrderDetails;
     public TableColumn colItemCode;
@@ -75,7 +79,7 @@ public class PlaceOrderFormController {
         orderId =generateNewOrderId();
         lblId.setText(orderId);
         lblDate.setText(LocalDate.now().toString());
-        lblTime.setText(LocalTime.now().toString());
+        //lblTime.setText(LocalTime.now().toString());
         btnPlaceOrder.setDisable(true);
 
         cmbCustomerId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -179,7 +183,7 @@ public class PlaceOrderFormController {
         storeValidations();
     }
 
-    public void btnPlaceOrder_OnAction(ActionEvent actionEvent) {
+    public void btnPlaceOrder_OnAction(ActionEvent actionEvent) throws IOException {
         cmbCustomerId.setDisable(false);
         txtCustomerName.setDisable(false);
         txtDescription.setDisable(false);
@@ -190,6 +194,7 @@ public class PlaceOrderFormController {
                         tm.getCode(), tm.getQty(), tm.getDiscount())).collect(Collectors.toList()), Double.parseDouble(lblTotal.getText()));
         if (b) {
             new Alert(Alert.AlertType.INFORMATION, "Order has been placed successfully").show();
+            //makePayment();
         } else {
             new Alert(Alert.AlertType.ERROR, "Order has not been placed successfully").show();
         }
@@ -201,6 +206,7 @@ public class PlaceOrderFormController {
         tblOrderDetails.getItems().clear();
         txtQty.clear();
         calculateTotal();
+        printBill();
     }
 
     public void btnAdd_OnAction(ActionEvent actionEvent) {
@@ -257,6 +263,23 @@ public class PlaceOrderFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "Failed to load customer ids").show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void printBill(){
+        try {
+            JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/Payment_Bill.jrxml"));
+            JasperReport compileReport = JasperCompileManager.compileReport(design);
+
+            JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
+            JasperViewer.viewReport(jasperPrint, false);
+
+        } catch (JRException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -349,5 +372,14 @@ public class PlaceOrderFormController {
                 //new Alert(Alert.AlertType.INFORMATION, "Aded").showAndWait();
             }
         }
+    }
+
+    private void makePayment() throws IOException {
+        URL resource = getClass().getResource("../view/MakePaymentForm.fxml");
+        Parent load = FXMLLoader.load(resource);
+        Scene scene=new Scene(load);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 }

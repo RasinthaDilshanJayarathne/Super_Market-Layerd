@@ -13,12 +13,14 @@ public class ValidationUtil {
         for (TextField textFieldKey : map.keySet()) {
             Pattern patternValue = map.get(textFieldKey);
             if (!patternValue.matcher(textFieldKey.getText()).matches()) {
-                if (!textFieldKey.getText().isEmpty()){
-                    textFieldKey.setStyle("-fx-border-color: red");
+                if (!textFieldKey.getText().isEmpty()) {
+                    textFieldKey.setStyle("-fx-text-fill: red");
+                    ((AnchorPane) textFieldKey.getParent()).getChildren().get(1).setStyle("-fx-text-fill: red");
                 }
                 return textFieldKey;
             }
-            textFieldKey.setStyle("-fx-border-color: green");
+            textFieldKey.setStyle("-fx-text-fill: green");
+            ((AnchorPane) textFieldKey.getParent()).getChildren().get(1).setStyle("-fx-text-fill: green");
         }
         btn.setDisable(false);
         return true;
@@ -29,14 +31,12 @@ public class ValidationUtil {
         for (TextField textFieldKey : map.keySet()) {
             Pattern patternValue = map.get(textFieldKey);
             if (!patternValue.matcher(textFieldKey.getText()).matches()) {
-                if (!textFieldKey.getText().isEmpty()) {
+                if (!textFieldKey.getText().isEmpty()){
                     textFieldKey.setStyle("-fx-border-color: red");
-                    ((AnchorPane) textFieldKey.getParent()).getChildren().get(1).setStyle("-fx-text-fill: red");
                 }
                 return textFieldKey;
             }
             textFieldKey.setStyle("-fx-border-color: green");
-            ((AnchorPane) textFieldKey.getParent()).getChildren().get(1).setStyle("-fx-text-fill: green");
         }
         btn.setDisable(false);
         return true;
