@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Daily_Income" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="431df360-08de-45bb-a20c-01102ea4cbc3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter2.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<queryString>
+		<![CDATA[SELECT OrderDate,count(OrderId),sum(cost) from orders group by OrderDate]]>
+	</queryString>
+	<field name="OrderDate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrderDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrderDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="count(OrderId)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="count(OrderId)"/>
+		<property name="com.jaspersoft.studio.field.label" value="count(OrderId)"/>
+	</field>
+	<field name="sum(cost)" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="sum(cost)"/>
+		<property name="com.jaspersoft.studio.field.label" value="sum(cost)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="245" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="155" width="555" height="30" forecolor="#1E55FA" uuid="11f8c4cb-589a-4517-9d96-bd9dba5df73d"/>
+				<textElement textAlignment="Center">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAILY INCOME REPORT]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="210" y="186" width="100" height="30" uuid="cb4c7943-c0a1-4d34-982f-4663cb6f30e2"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="316" y="186" width="100" height="30" uuid="34614f7c-a9b3-4bca-870d-afcaa40d7e41"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="101" y="-99" width="353" height="281" uuid="664c1ee1-4fec-4144-bfe3-79c3b5184984"/>
+				<imageExpression><![CDATA["D:/Photos/Blood Bnking/123107698-shopping-logo-design-concept-template-vector-removebg-preview.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="106" width="555" height="30" forecolor="#050505" uuid="555e45cc-f27a-4a71-9754-59eb0d4332d6"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUPER MARKET]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="185" height="30" uuid="a865dd5c-b3bf-4f16-9efc-9128ed8c0d83">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e34329d2-11e5-4325-a05b-9dc9deb3baa7"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="0" width="185" height="30" uuid="6100f2f5-267a-44ab-b140-b73bee69d0fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75b33d54-881f-400e-8446-af9e1daad279"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Order Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="185" height="30" uuid="b4abdcdf-5068-4096-a8df-05e787e9c913">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f602e8d-fe58-43a2-9dcf-0775b57d5a30"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Income]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="185" height="30" uuid="52be7bda-a9d2-4e52-a895-eea02f11f727">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e34329d2-11e5-4325-a05b-9dc9deb3baa7"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{OrderDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="30" uuid="527e15c2-2fa5-45e8-b4c0-6e84cb67915f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="75b33d54-881f-400e-8446-af9e1daad279"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{count(OrderId)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="0" width="185" height="30" uuid="3aeb0dd6-b2a9-47fb-9fff-dfe8a9751611">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5f602e8d-fe58-43a2-9dcf-0775b57d5a30"/>
+				</reportElement>
+				<box topPadding="5">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sum(cost)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

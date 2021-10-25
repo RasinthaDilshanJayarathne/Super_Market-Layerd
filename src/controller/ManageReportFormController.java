@@ -28,27 +28,9 @@ public class ManageReportFormController {
     public AnchorPane root;
     public ImageView imgDailyIncome;
     public ImageView imgMonthlyIncome;
-    public ImageView imgMovableItem;
     public Label lblMenu;
     public Label lblDescription;
-
-    private JasperDesign design;
-    private JasperReport compileReport;
-    JasperPrint jasperPrint;
-
-    {
-       /* try {
-            jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
-            compileReport = JasperCompileManager.compileReport(design);
-            JasperViewer.viewReport(jasperPrint, false);
-        } catch (JRException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }*/
-    }
+    public ImageView imgMovableItem;
 
     public void navigateToHome(MouseEvent mouseEvent) throws IOException {
         URL resource = this.getClass().getResource("/view/AdminDashBoardForm.fxml");
@@ -68,13 +50,52 @@ public class ManageReportFormController {
 
             switch (icon.getId()) {
                 case "imgDailyIncome":
-                    design = JRXmlLoader.load(this.getClass().getResourceAsStream(""));
+                    try {
+                        JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/Daily_Income.jrxml"));
+                        JasperReport compileReport = JasperCompileManager.compileReport(design);
+
+                        JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
+                        JasperViewer.viewReport(jasperPrint, false);
+
+                    } catch (JRException e) {
+                        e.printStackTrace();
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case "imgMonthlyIncome":
-                    design = JRXmlLoader.load(this.getClass().getResourceAsStream(""));
+                    try {
+                        JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/monthlyIncom.jrxml"));
+                        JasperReport compileReport = JasperCompileManager.compileReport(design);
+
+                        JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
+                        JasperViewer.viewReport(jasperPrint, false);
+
+                    } catch (JRException e) {
+                        e.printStackTrace();
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case "imgMovableItem":
-                    design = JRXmlLoader.load(this.getClass().getResourceAsStream(""));
+                    try {
+                        JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/mostMovable.jrxml"));
+                        JasperReport compileReport = JasperCompileManager.compileReport(design);
+
+                        JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
+                        JasperViewer.viewReport(jasperPrint, false);
+
+                    } catch (JRException e) {
+                        e.printStackTrace();
+                    } catch (SQLException throwables) {
+                        throwables.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
             }
 
