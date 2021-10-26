@@ -18,3 +18,7 @@ UNION ALL
 SELECT o.orderDate,o.CustId,SUM(o.Cost),od.itemCode,od.OrderQty FROM orders o RIGHT JOIN orderdetail od ON o.OrderId = od.OrderId
 
 SELECT * FROM orderdetail ORDER BY OrderQty ASC LIMIT 1 && OrderQty DESC LIMIT 1;
+
+SELECT o.OrderId,o.OrderDate,o.CustId,o.Cost,od.ItemCode,od.OrderQty,od.Discount FROM orders o INNER JOIN orderdetail od ON o.OrderId = od.OrderId
+
+SELECT o.OrderId,o.OrderDate,o.CustId,o.Cost,od.ItemCode,od.OrderQty,od.Discount FROM orders o INNER JOIN orderdetail od ON o.OrderId = od.OrderId WHERE o.OrderId='OD007';

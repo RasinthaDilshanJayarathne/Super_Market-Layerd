@@ -8,6 +8,7 @@ import com.jfoenix.controls.JFXTextField;
 import db.DbConnection;
 import javafx.application.Platform;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,6 +30,7 @@ import model.ItemDTO;
 import model.OrderDTO;
 import model.OrderDetailDTO;
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.data.JRBeanArrayDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
@@ -42,10 +44,8 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -269,11 +269,31 @@ public class PlaceOrderFormController {
     }
 
     private void printBill(){
+
+        String orderId=lblId.getText();
+        LocalDate orderDate= LocalDate.parse(lblDate.getText());
+        String custId=cmbCustomerId.getSelectionModel().getSelectedItem();
+        String itemCode=cmbItemCode.getSelectionModel().getSelectedItem();
+        double unitPrice=Double.parseDouble(txtUnitPrice.getText());
+        int orderQty=Integer.parseInt(txtQty.getText());
+        double discount=Double.parseDouble(txtDiscount.getText());
+        double cost=Double.parseDouble(lblTotal.getText());
+
+        HashMap map=new HashMap();
+        map.put("orderId",orderId);
+        map.put("orderDate",orderDate);
+        map.put("custId",custId);
+        map.put("itemCode",itemCode);
+        map.put("unitPrice",unitPrice);
+        map.put("orderQty",orderQty);
+        map.put("discount",discount);
+        map.put("cost",cost);
+
         try {
             JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/Payment_Bill.jrxml"));
             JasperReport compileReport = JasperCompileManager.compileReport(design);
-
-            JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, null, DbConnection.getInstance().getConnection());
+            ObservableList<OrderDetailTM> items = tblOrderDetails.getItems();
+            JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, map,DbConnection.getInstance().getConnection());
             JasperViewer.viewReport(jasperPrint, false);
 
         } catch (JRException e) {
