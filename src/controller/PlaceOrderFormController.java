@@ -290,7 +290,7 @@ public class PlaceOrderFormController {
         map.put("cost",cost);
 
         try {
-            JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/Payment_Bill.jrxml"));
+            JasperDesign design = JRXmlLoader.load(this.getClass().getResourceAsStream("/view/jasperReport/Order_Report.jrxml"));
             JasperReport compileReport = JasperCompileManager.compileReport(design);
             ObservableList<OrderDetailTM> items = tblOrderDetails.getItems();
             JasperPrint jasperPrint = JasperFillManager.fillReport(compileReport, map,DbConnection.getInstance().getConnection());
