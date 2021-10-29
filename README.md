@@ -1,4 +1,4 @@
-# Super_Market-Layerd
+# Super_Market-Layered
 This done by Layerd architecture and JAVAFX with a complete project that connects to the database
 
 Login Page 🔐
