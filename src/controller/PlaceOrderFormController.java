@@ -385,13 +385,4 @@ public class PlaceOrderFormController {
             }
         }
     }
-
-    private void makePayment() throws IOException {
-        URL resource = getClass().getResource("../view/MakePaymentForm.fxml");
-        Parent load = FXMLLoader.load(resource);
-        Scene scene=new Scene(load);
-        Stage stage=new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
 }

@@ -61,9 +61,9 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="27.0" layoutY="17.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="49.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/home-icon.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
       <JFXButton id="btnSave" fx:id="btnSave" layoutX="254.0" layoutY="355.0" onAction="#btnSave_OnAction" prefHeight="39.0" prefWidth="105.0" style="-fx-cursor: hand;" stylesheets="@../styles/manage_customer.css" text="Save">

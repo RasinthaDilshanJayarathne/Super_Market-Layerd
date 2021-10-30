@@ -24,6 +24,7 @@ public class CashierDashBoardFormController {
     public Label lblMenu;
     public Label lblDescription;
     public AnchorPane root;
+    public ImageView imgPayment;
 
     public void playMouseEnterAnimation(MouseEvent event) {
         if (event.getSource() instanceof ImageView) {
@@ -37,6 +38,10 @@ public class CashierDashBoardFormController {
                 case "imgCustomer":
                     lblMenu.setText("Manage Customers");
                     lblDescription.setText("Click to add, edit, delete, search or view customers");
+                    break;
+                case "imgPayment":
+                    lblMenu.setText("View Payment");
+                    lblDescription.setText("Click to or view all payment details");
                     break;
             }
 
@@ -80,6 +85,9 @@ public class CashierDashBoardFormController {
                     break;
                 case "imgCustomer":
                     root = FXMLLoader.load(this.getClass().getResource("/view/ManageCustomerForm.fxml"));
+                    break;
+                case "imgPayment":
+                    root = FXMLLoader.load(this.getClass().getResource("/view/MakePaymentForm.fxml"));
                     break;
             }
 

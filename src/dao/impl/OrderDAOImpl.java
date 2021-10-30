@@ -40,7 +40,18 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public ArrayList<Order> getAll() throws SQLException, ClassNotFoundException {
-        throw new UnsupportedOperationException("Not Supported Yet");
+        ArrayList<Order> allOrders = new ArrayList();
+        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM Orders");
+        while (rst.next()) {
+            allOrders.add(new Order(
+                    rst.getString("OrderId"),
+                    LocalDate.parse(rst.getString("OrderDate")),
+                    LocalTime.parse(rst.getString("OrderTime")),
+                    rst.getString("CustId"),
+                    rst.getDouble("Cost"))
+            );
+        }
+        return allOrders;
     }
 
     @Override

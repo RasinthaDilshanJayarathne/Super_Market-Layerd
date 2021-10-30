@@ -10,12 +10,12 @@
 
 <AnchorPane fx:id="root" prefHeight="593.0" prefWidth="1012.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CashierDashBoardFormController">
    <children>
-      <ImageView fx:id="imgOrder" fitHeight="159.0" fitWidth="127.0" layoutX="588.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgOrder" fitHeight="159.0" fitWidth="127.0" layoutX="431.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/orders.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgCustomer" fitHeight="159.0" fitWidth="127.0" layoutX="318.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgCustomer" fitHeight="159.0" fitWidth="127.0" layoutX="161.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/customers.png" />
          </image>
@@ -39,5 +39,10 @@
       </Label>
       <Separator layoutX="58.0" layoutY="164.0" prefHeight="2.0" prefWidth="909.0" />
       <FontAwesomeIconView fill="#ee1d1d" glyphName="POWER_OFF" layoutX="14.0" layoutY="44.0" onMouseClicked="#navigateToHome" size="40" />
+      <ImageView fx:id="imgPayment" fitHeight="159.0" fitWidth="127.0" layoutX="708.0" layoutY="233.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/viewPayment.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

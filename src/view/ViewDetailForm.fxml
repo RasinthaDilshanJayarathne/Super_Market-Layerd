@@ -21,9 +21,9 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <ImageView fitHeight="58.0" fitWidth="62.0" layoutX="27.0" layoutY="17.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#navigateToHome" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/home-icon.png" />
+            <Image url="@../assets/home.png" />
          </image>
       </ImageView>
       <Label layoutX="123.0" layoutY="22.0" text="View All Details">
