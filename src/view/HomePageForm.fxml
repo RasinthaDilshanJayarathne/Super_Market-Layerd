@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="593.0" prefWidth="1012.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomePageFormController">
+   <children>
+      <Label layoutX="151.0" layoutY="69.0" text="WELCOME TO OUR SUPER  MARKET" textFill="#140017">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="36.0" />
+         </font>
+      </Label>
+      <JFXProgressBar fx:id="progressBar" layoutX="68.0" layoutY="530.0" prefHeight="15.0" prefWidth="818.0" />
+      <ProgressIndicator fx:id="progressRange" layoutX="889.0" layoutY="527.0" prefHeight="21.0" prefWidth="59.0" progress="0.0" />
+      <ImageView fx:id="imageView" fitHeight="110.0" fitWidth="122.0" layoutX="451.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/spalsh.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="6.0" layoutY="572.0" text="Version 2021.0.0.1" />
+      <Label layoutX="396.0" layoutY="571.0" text="Copyright ©️ 2021 Blood Bank Management. All Right Reserved Design By Rasintha Dilshan" />
+   </children>
+</AnchorPane>
