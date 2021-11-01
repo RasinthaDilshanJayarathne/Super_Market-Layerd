@@ -1,8 +1,8 @@
 package bo.custom;
 
-import model.CustomerDTO;
-import model.ItemDTO;
-import model.OrderDTO;
+import dto.CustomerDTO;
+import dto.ItemDTO;
+import dto.OrderDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

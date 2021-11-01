@@ -28,12 +28,14 @@ public class DAOFactory {
                 return new OrderDetailDAOImpl();
             case QUERYDAO:
                 return new QueryDAOImpl();
+            case LOGIN:
+                return new LoginDAOImpl();
             default:
                 return null;
         }
     }
 
     public enum DAOTypes {
-        CUSTOMER, ITEM, ORDER, ORDERDETAIL, QUERYDAO
+        CUSTOMER, ITEM, ORDER, ORDERDETAIL, QUERYDAO,LOGIN
     }
 }

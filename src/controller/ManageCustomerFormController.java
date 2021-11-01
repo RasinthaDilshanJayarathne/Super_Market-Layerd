@@ -19,7 +19,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import model.CustomerDTO;
+import dto.CustomerDTO;
 import util.validation.ValidationUtil;
 import view.tm.CustomerTM;
 

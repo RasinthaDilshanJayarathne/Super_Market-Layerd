@@ -1,6 +1,6 @@
 package dao.custom;
 
-import model.CustomDTO;
+import dto.CustomDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

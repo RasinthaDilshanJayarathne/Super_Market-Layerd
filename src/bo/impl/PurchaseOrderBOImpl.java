@@ -8,10 +8,10 @@ import entity.Customer;
 import entity.Item;
 import entity.Order;
 import entity.OrderDetail;
-import model.CustomerDTO;
-import model.ItemDTO;
-import model.OrderDTO;
-import model.OrderDetailDTO;
+import dto.CustomerDTO;
+import dto.ItemDTO;
+import dto.OrderDTO;
+import dto.OrderDetailDTO;
 
 import java.sql.Connection;
 import java.sql.SQLException;

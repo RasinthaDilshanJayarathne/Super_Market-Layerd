@@ -4,7 +4,7 @@ import bo.custom.CustomerBO;
 import dao.custom.CustomerDAO;
 import dao.impl.DAOFactory;
 import entity.Customer;
-import model.CustomerDTO;
+import dto.CustomerDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

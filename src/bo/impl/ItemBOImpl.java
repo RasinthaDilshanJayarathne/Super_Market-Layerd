@@ -4,7 +4,7 @@ import bo.custom.ItemBO;
 import dao.custom.ItemDAO;
 import dao.impl.DAOFactory;
 import entity.Item;
-import model.ItemDTO;
+import dto.ItemDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
